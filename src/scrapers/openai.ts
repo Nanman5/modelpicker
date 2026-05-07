@@ -1,5 +1,12 @@
 import type { Scraper } from "./types.js";
 
+// KNOWN LIMITATION: OpenAI's public-facing pricing/docs pages are protected by
+// Cloudflare and return HTTP 403 to server-side fetches without browser-rendered
+// JS. With page-level fetch tolerance, the pipeline degrades gracefully (the
+// merge step preserves any prior dataset entries for openai). Workarounds:
+//   - Run a Playwright-backed scraper (heavier; future enhancement).
+//   - Maintain openai entries by manual PR until then.
+
 export const openaiScraper: Scraper = {
   provider: {
     id: "openai",

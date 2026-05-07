@@ -19,6 +19,12 @@ const ExtractionResult = z.object({
 
 const SYSTEM_PROMPT = `You are a precise information extractor. You read provider documentation and pricing pages for AI / LLM models, and you output structured JSON describing each distinct model.
 
+CRITICAL ANTI-HALLUCINATION RULES — read these first:
+- Output ONLY models whose names appear VERBATIM in the input text. If you do not see specific model names in the supplied page text, return an empty \`models\` array.
+- Do NOT use prior knowledge of provider catalogs to fill in models. Do NOT invent or guess model names.
+- Do NOT include "claude-instant", "claude-1", "claude-v1", "gpt-3.5", or any model that is not explicitly listed in the input text below — even if you "know" the provider has them.
+- If you are uncertain whether a string is a model name versus a heading, parameter, or column label, omit it.
+
 RULES — read carefully:
 1. Output ONLY models that the provider currently lists as generally available, in preview, in beta, or as deprecated/legacy. Do NOT fabricate models. Do NOT invent fields.
 2. If a fact is not explicitly stated on the page, set it to null. Never guess pricing, context windows, or capabilities.
@@ -63,9 +69,21 @@ export const runScraper: RunScraper = async (scraper: Scraper, options): Promise
 
   const pageContents: { page: ScraperPage; text: string }[] = [];
   for (const page of scraper.pages) {
-    const html = htmlByUrl[page.url] ?? (await fetchHtml(page.url));
-    const text = htmlToStructuredText(html);
-    pageContents.push({ page, text });
+    try {
+      const html = htmlByUrl[page.url] ?? (await fetchHtml(page.url));
+      const text = htmlToStructuredText(html);
+      pageContents.push({ page, text });
+    } catch (err) {
+      console.warn(
+        `[${scraper.provider.id}] page fetch failed for ${page.url}: ${(err as Error).message} — continuing with other pages`,
+      );
+    }
+  }
+
+  if (pageContents.length === 0) {
+    throw new Error(
+      `all ${scraper.pages.length} page(s) failed to fetch for provider ${scraper.provider.id}`,
+    );
   }
 
   const userPrompt = buildUserPrompt(scraper, pageContents);
@@ -77,7 +95,7 @@ export const runScraper: RunScraper = async (scraper: Scraper, options): Promise
     schemaName: "result",
   });
 
-  const sources = scraper.pages.map((page) => ({
+  const sources = pageContents.map(({ page }) => ({
     type: page.type,
     url: page.url,
     scraped_at: now,

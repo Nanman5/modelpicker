@@ -19,8 +19,8 @@ For each model on the page, output one record PER benchmark score. Output ONLY b
 Each record must follow this shape:
 {
   model_label: string,           // model name as printed on the page
-  model_api_id?: string,         // API identifier if shown (e.g. "claude-opus-4-5"); omit if absent
-  provider_hint?: string,        // e.g. "Anthropic", "OpenAI"; omit if unclear
+  model_api_id?: string,         // API identifier if shown anywhere (e.g. "claude-opus-4-5"); omit if absent
+  provider_hint?: string,        // e.g. "Anthropic", "OpenAI", "Google", "xAI"; omit if unclear
   benchmark: {
     name: string,                // lowercase, dash-separated. Examples below.
     score: number,               // numeric value as printed
@@ -33,14 +33,20 @@ Each record must follow this shape:
 Top-level shape:
 { records: BenchmarkRecord[] }
 
-Benchmark name normalization (use these canonical forms when applicable):
+ONLY include actual evaluation benchmarks. The following are NOT benchmarks — DO NOT emit records for them:
+- price / pricing / cost / $ per token
+- speed / output speed / tokens per second / throughput
+- latency / time to first token / TTFT
+- context window / context size
+- release date
+
+Canonical benchmark names (use these when applicable; otherwise use a sensible kebab-case slug):
 - "MMLU" → "mmlu"
 - "MMLU-Pro" → "mmlu-pro"
 - "GPQA Diamond" → "gpqa-diamond"
 - "HumanEval" → "humaneval"
 - "SWE-Bench Verified" → "swe-bench-verified"
-- "AIME 2024" → "aime-2024"
-- "AIME 2025" → "aime-2025"
+- "AIME 2024" / "AIME 2025" → "aime-2024" / "aime-2025"
 - "LiveCodeBench" → "livecodebench"
 - "MATH" → "math"
 - "MATH-500" → "math-500"
@@ -48,11 +54,15 @@ Benchmark name normalization (use these canonical forms when applicable):
 - "Quality Index" / "Intelligence Index" → "artificial-analysis-intelligence-index"
 - "Arena Score" / "LMArena Elo" → "lmarena-elo"
 - "Aider Polyglot" → "aider-polyglot"
+- "Terminal-Bench" → "terminal-bench"
 
 For percentages, store the percent value (e.g. 78.4 for "78.4%"), unit "%".
 For Elo, store the Elo number, unit "elo".
 For pass@1 fractions like "0.75", convert to "75" with unit "%" only if the page renders it as a percentage; otherwise keep the raw number with unit "score" or null.
-Skip rows that don't have a numeric score.`;
+Skip rows that don't have a numeric score.
+
+Reasoning-effort variants:
+- If a row says "Claude Opus 4.7 (Adaptive Reasoning, Max Effort)" or "GPT-5.5 (xhigh)", that's the same underlying model run at different effort. Set model_label to the BASE name only ("Claude Opus 4.7", "GPT-5.5") and put the effort tag in a parenthetical inside the benchmark name itself if you must distinguish runs (e.g. "mmlu-pro-max-effort"). Otherwise just emit the base name and one record per benchmark — pick the model's headline score.`;
 
 export const runBenchmarkScraper: RunBenchmarkScraper = async (scraper, options) => {
   const { llm, htmlByUrl = {}, now = new Date().toISOString() } = options;

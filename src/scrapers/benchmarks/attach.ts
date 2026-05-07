@@ -67,6 +67,11 @@ function normalize(s: string): string {
     .replace(/^-|-$/g, "");
 }
 
+function stripParentheticals(s: string): string {
+  // "Claude Opus 4.7 (Adaptive Reasoning, Max Effort)" → "Claude Opus 4.7"
+  return s.replace(/\([^)]*\)/g, " ").trim();
+}
+
 function resolve(
   rec: BenchmarkRecord,
   all: ModelFact[],
@@ -75,7 +80,8 @@ function resolve(
 ): ModelFact | undefined {
   const provider = rec.provider_hint ? slugifyProvider(rec.provider_hint) : null;
   const apiId = rec.model_api_id?.trim();
-  const labelSlug = normalize(rec.model_label);
+  const cleanLabel = stripParentheticals(rec.model_label);
+  const labelSlug = normalize(cleanLabel);
 
   if (provider && apiId) {
     const id = `${provider}/${apiId}`;
@@ -92,8 +98,21 @@ function resolve(
     if (hit) return hit;
   }
 
-  const alias = byAlias.get(normalize(apiId ?? "")) ?? byAlias.get(labelSlug);
-  if (alias) return alias;
+  const aliasHit = byAlias.get(normalize(apiId ?? "")) ?? byAlias.get(labelSlug);
+  if (aliasHit) {
+    if (!provider || aliasHit.provider === provider) return aliasHit;
+  }
+
+  // Fuzzy: model.id ends with the labelSlug (handles "claude opus 4.7" → "anthropic/claude-opus-4-7")
+  const candidates = all.filter((m) => {
+    if (provider && m.provider !== provider) return false;
+    const slug = m.id.split("/")[1] ?? m.id;
+    return slug === labelSlug || normalize(m.name) === labelSlug;
+  });
+  if (candidates.length === 1) return candidates[0];
+  if (candidates.length > 1 && provider) {
+    return candidates.find((c) => c.provider === provider);
+  }
 
   return undefined;
 }

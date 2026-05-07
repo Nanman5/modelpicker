@@ -9,8 +9,7 @@ export const xaiScraper: Scraper = {
     pricing_url: "https://docs.x.ai/docs/models",
   },
   pages: [
-    { type: "docs", url: "https://docs.x.ai/docs/models" },
-    { type: "pricing_page", url: "https://docs.x.ai/docs/models#models-and-pricing" },
+    { type: "docs", url: "https://docs.x.ai/developers/models" },
   ],
   hints: `Grok model API IDs look like "grok-4", "grok-4-fast", "grok-code-fast-1". The slug after "xai/" is the API ID exactly.
 - "Vision" → modality "image" in input + capability "vision".

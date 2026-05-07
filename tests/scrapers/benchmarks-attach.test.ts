@@ -119,6 +119,53 @@ describe("attachBenchmarks", () => {
     expect(result.models[0]!.benchmarks[0]!.score).toBe(80);
   });
 
+  it("strips parenthetical reasoning-effort tags from model label before matching", () => {
+    const models = [makeModel("anthropic", "claude-opus-4-7", { name: "Claude Opus 4.7" })];
+    const records: BenchmarkRecord[] = [
+      {
+        model_label: "Claude Opus 4.7 (Adaptive Reasoning, Max Effort)",
+        provider_hint: "Anthropic",
+        benchmark: makeBenchmark({ name: "artificial-analysis-intelligence-index", score: 78 }),
+      },
+    ];
+    const result = attachBenchmarks(models, records, () => {});
+    expect(result.attached).toBe(1);
+    expect(result.dropped).toBe(0);
+  });
+
+  it("matches 'Claude Opus 4.7' label to anthropic/claude-opus-4-7 by slug", () => {
+    const models = [makeModel("anthropic", "claude-opus-4-7", { name: "Claude Opus 4.7" })];
+    const records: BenchmarkRecord[] = [
+      {
+        model_label: "Claude Opus 4.7",
+        provider_hint: "Anthropic",
+        benchmark: makeBenchmark(),
+      },
+    ];
+    const result = attachBenchmarks(models, records, () => {});
+    expect(result.attached).toBe(1);
+  });
+
+  it("does not match across providers when provider_hint is given", () => {
+    const models = [
+      makeModel("anthropic", "shared-name", { name: "Shared Name" }),
+      makeModel("openai", "shared-name", { name: "Shared Name" }),
+    ];
+    const records: BenchmarkRecord[] = [
+      {
+        model_label: "Shared Name",
+        provider_hint: "OpenAI",
+        benchmark: makeBenchmark(),
+      },
+    ];
+    const result = attachBenchmarks(models, records, () => {});
+    expect(result.attached).toBe(1);
+    const openaiModel = result.models.find((m) => m.id === "openai/shared-name")!;
+    const anthropicModel = result.models.find((m) => m.id === "anthropic/shared-name")!;
+    expect(openaiModel.benchmarks).toHaveLength(1);
+    expect(anthropicModel.benchmarks).toHaveLength(0);
+  });
+
   it("keeps benchmarks from different sources side-by-side", () => {
     const aa = makeBenchmark({ source_name: "Artificial Analysis", score: 80 });
     const lm = makeBenchmark({ source_name: "LMArena", score: 75, source: "https://lmarena.ai/leaderboard" });

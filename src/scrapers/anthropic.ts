@@ -9,7 +9,7 @@ export const anthropicScraper: Scraper = {
     pricing_url: "https://www.anthropic.com/pricing",
   },
   pages: [
-    { type: "pricing_page", url: "https://www.anthropic.com/pricing" },
+    { type: "pricing_page", url: "https://docs.anthropic.com/en/docs/about-claude/pricing" },
     {
       type: "docs",
       url: "https://docs.anthropic.com/en/docs/about-claude/models/overview",

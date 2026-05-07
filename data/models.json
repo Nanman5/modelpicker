@@ -1,7 +1,1870 @@
 {
   "$schema": "https://modelpicker.dev/schema/v1.json",
   "version": 1,
-  "generated_at": "2026-05-07T00:00:00.000Z",
-  "providers": [],
-  "models": []
+  "generated_at": "2026-05-07T14:57:12.467Z",
+  "providers": [
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "homepage": "https://www.anthropic.com",
+      "docs_url": "https://docs.anthropic.com",
+      "pricing_url": "https://www.anthropic.com/pricing"
+    },
+    {
+      "id": "google",
+      "name": "Google",
+      "homepage": "https://ai.google.dev",
+      "docs_url": "https://ai.google.dev/gemini-api/docs/models",
+      "pricing_url": "https://ai.google.dev/gemini-api/docs/pricing"
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "homepage": "https://openai.com",
+      "docs_url": "https://platform.openai.com/docs",
+      "pricing_url": "https://openai.com/api/pricing/"
+    },
+    {
+      "id": "xai",
+      "name": "xAI",
+      "homepage": "https://x.ai",
+      "docs_url": "https://docs.x.ai",
+      "pricing_url": "https://docs.x.ai/docs/models"
+    }
+  ],
+  "models": [
+    {
+      "id": "anthropic/claude-haiku-3",
+      "provider": "anthropic",
+      "name": "Claude Haiku 3",
+      "aliases": [
+        "claude-haiku-3"
+      ],
+      "context_window": null,
+      "max_output_tokens": null,
+      "pricing": {
+        "input_per_million_usd": 0.25,
+        "output_per_million_usd": 1.25,
+        "cache_read_per_million_usd": 0.03,
+        "cache_write_per_million_usd": 0.3
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tool_use",
+        "vision",
+        "extended_thinking",
+        "prompt_caching"
+      ],
+      "knowledge_cutoff": null,
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "pricing_page",
+          "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        },
+        {
+          "type": "docs",
+          "url": "https://docs.anthropic.com/en/docs/about-claude/models/overview",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        }
+      ]
+    },
+    {
+      "id": "anthropic/claude-haiku-3-5",
+      "provider": "anthropic",
+      "name": "Claude Haiku 3.5",
+      "aliases": [
+        "claude-haiku-3-5"
+      ],
+      "context_window": null,
+      "max_output_tokens": null,
+      "pricing": {
+        "input_per_million_usd": 0.8,
+        "output_per_million_usd": 4,
+        "cache_read_per_million_usd": 0.08,
+        "cache_write_per_million_usd": 1
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tool_use",
+        "vision",
+        "extended_thinking",
+        "prompt_caching"
+      ],
+      "knowledge_cutoff": null,
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "pricing_page",
+          "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        },
+        {
+          "type": "docs",
+          "url": "https://docs.anthropic.com/en/docs/about-claude/models/overview",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        }
+      ]
+    },
+    {
+      "id": "anthropic/claude-haiku-4-5",
+      "provider": "anthropic",
+      "name": "Claude Haiku 4.5",
+      "aliases": [
+        "claude-haiku-4-5"
+      ],
+      "context_window": 200000,
+      "max_output_tokens": 64000,
+      "pricing": {
+        "input_per_million_usd": 1,
+        "output_per_million_usd": 5,
+        "cache_read_per_million_usd": 0.1,
+        "cache_write_per_million_usd": 1.25
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tool_use",
+        "vision",
+        "extended_thinking",
+        "prompt_caching"
+      ],
+      "knowledge_cutoff": "2025-02",
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "pricing_page",
+          "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        },
+        {
+          "type": "docs",
+          "url": "https://docs.anthropic.com/en/docs/about-claude/models/overview",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        }
+      ]
+    },
+    {
+      "id": "anthropic/claude-opus-3",
+      "provider": "anthropic",
+      "name": "Claude Opus 3",
+      "aliases": [
+        "claude-opus-3"
+      ],
+      "context_window": null,
+      "max_output_tokens": null,
+      "pricing": {
+        "input_per_million_usd": 15,
+        "output_per_million_usd": 75,
+        "cache_read_per_million_usd": 1.5,
+        "cache_write_per_million_usd": 18.75
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tool_use",
+        "vision",
+        "extended_thinking",
+        "prompt_caching"
+      ],
+      "knowledge_cutoff": null,
+      "released_at": null,
+      "deprecated": true,
+      "deprecation_date": null,
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "pricing_page",
+          "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        },
+        {
+          "type": "docs",
+          "url": "https://docs.anthropic.com/en/docs/about-claude/models/overview",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        }
+      ]
+    },
+    {
+      "id": "anthropic/claude-opus-4",
+      "provider": "anthropic",
+      "name": "Claude Opus 4",
+      "aliases": [
+        "claude-opus-4"
+      ],
+      "context_window": null,
+      "max_output_tokens": null,
+      "pricing": {
+        "input_per_million_usd": 15,
+        "output_per_million_usd": 75,
+        "cache_read_per_million_usd": 1.5,
+        "cache_write_per_million_usd": 18.75
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tool_use",
+        "vision",
+        "extended_thinking",
+        "prompt_caching"
+      ],
+      "knowledge_cutoff": null,
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "pricing_page",
+          "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        },
+        {
+          "type": "docs",
+          "url": "https://docs.anthropic.com/en/docs/about-claude/models/overview",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        }
+      ]
+    },
+    {
+      "id": "anthropic/claude-opus-4-1",
+      "provider": "anthropic",
+      "name": "Claude Opus 4.1",
+      "aliases": [
+        "claude-opus-4-1"
+      ],
+      "context_window": null,
+      "max_output_tokens": null,
+      "pricing": {
+        "input_per_million_usd": 15,
+        "output_per_million_usd": 75,
+        "cache_read_per_million_usd": 1.5,
+        "cache_write_per_million_usd": 18.75
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tool_use",
+        "vision",
+        "extended_thinking",
+        "prompt_caching"
+      ],
+      "knowledge_cutoff": null,
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "pricing_page",
+          "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        },
+        {
+          "type": "docs",
+          "url": "https://docs.anthropic.com/en/docs/about-claude/models/overview",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        }
+      ]
+    },
+    {
+      "id": "anthropic/claude-opus-4-5",
+      "provider": "anthropic",
+      "name": "Claude Opus 4.5",
+      "aliases": [
+        "claude-opus-4-5"
+      ],
+      "context_window": 1000000,
+      "max_output_tokens": null,
+      "pricing": {
+        "input_per_million_usd": 5,
+        "output_per_million_usd": 25,
+        "cache_read_per_million_usd": 0.5,
+        "cache_write_per_million_usd": 6.25
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tool_use",
+        "vision",
+        "extended_thinking",
+        "prompt_caching"
+      ],
+      "knowledge_cutoff": null,
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "pricing_page",
+          "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        },
+        {
+          "type": "docs",
+          "url": "https://docs.anthropic.com/en/docs/about-claude/models/overview",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        }
+      ]
+    },
+    {
+      "id": "anthropic/claude-opus-4-6",
+      "provider": "anthropic",
+      "name": "Claude Opus 4.6",
+      "aliases": [
+        "claude-opus-4-6"
+      ],
+      "context_window": 1000000,
+      "max_output_tokens": 64000,
+      "pricing": {
+        "input_per_million_usd": 5,
+        "output_per_million_usd": 25,
+        "cache_read_per_million_usd": 0.5,
+        "cache_write_per_million_usd": 6.25
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tool_use",
+        "vision",
+        "extended_thinking",
+        "prompt_caching"
+      ],
+      "knowledge_cutoff": null,
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "pricing_page",
+          "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        },
+        {
+          "type": "docs",
+          "url": "https://docs.anthropic.com/en/docs/about-claude/models/overview",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        }
+      ]
+    },
+    {
+      "id": "anthropic/claude-opus-4-7",
+      "provider": "anthropic",
+      "name": "Claude Opus 4.7",
+      "aliases": [
+        "claude-opus-4-7"
+      ],
+      "context_window": 1000000,
+      "max_output_tokens": 128000,
+      "pricing": {
+        "input_per_million_usd": 5,
+        "output_per_million_usd": 25,
+        "cache_read_per_million_usd": 0.5,
+        "cache_write_per_million_usd": 6.25
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tool_use",
+        "vision",
+        "extended_thinking",
+        "prompt_caching"
+      ],
+      "knowledge_cutoff": "2026-01",
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [
+        {
+          "name": "artificial-analysis-intelligence-index",
+          "score": 57,
+          "unit": "score",
+          "source": "https://artificialanalysis.ai/models",
+          "source_name": "Artificial Analysis",
+          "as_of": "2026-05-07"
+        }
+      ],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "pricing_page",
+          "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        },
+        {
+          "type": "docs",
+          "url": "https://docs.anthropic.com/en/docs/about-claude/models/overview",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        }
+      ]
+    },
+    {
+      "id": "anthropic/claude-sonnet-3-7",
+      "provider": "anthropic",
+      "name": "Claude Sonnet 3.7",
+      "aliases": [
+        "claude-sonnet-3-7"
+      ],
+      "context_window": null,
+      "max_output_tokens": null,
+      "pricing": {
+        "input_per_million_usd": 3,
+        "output_per_million_usd": 15,
+        "cache_read_per_million_usd": 0.3,
+        "cache_write_per_million_usd": 3.75
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tool_use",
+        "vision",
+        "extended_thinking",
+        "prompt_caching"
+      ],
+      "knowledge_cutoff": null,
+      "released_at": null,
+      "deprecated": true,
+      "deprecation_date": null,
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "pricing_page",
+          "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        },
+        {
+          "type": "docs",
+          "url": "https://docs.anthropic.com/en/docs/about-claude/models/overview",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        }
+      ]
+    },
+    {
+      "id": "anthropic/claude-sonnet-4",
+      "provider": "anthropic",
+      "name": "Claude Sonnet 4",
+      "aliases": [
+        "claude-sonnet-4"
+      ],
+      "context_window": null,
+      "max_output_tokens": null,
+      "pricing": {
+        "input_per_million_usd": 3,
+        "output_per_million_usd": 15,
+        "cache_read_per_million_usd": 0.3,
+        "cache_write_per_million_usd": 3.75
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tool_use",
+        "vision",
+        "extended_thinking",
+        "prompt_caching"
+      ],
+      "knowledge_cutoff": null,
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "pricing_page",
+          "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        },
+        {
+          "type": "docs",
+          "url": "https://docs.anthropic.com/en/docs/about-claude/models/overview",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        }
+      ]
+    },
+    {
+      "id": "anthropic/claude-sonnet-4-5",
+      "provider": "anthropic",
+      "name": "Claude Sonnet 4.5",
+      "aliases": [
+        "claude-sonnet-4-5"
+      ],
+      "context_window": 1000000,
+      "max_output_tokens": null,
+      "pricing": {
+        "input_per_million_usd": 3,
+        "output_per_million_usd": 15,
+        "cache_read_per_million_usd": 0.3,
+        "cache_write_per_million_usd": 3.75
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tool_use",
+        "vision",
+        "extended_thinking",
+        "prompt_caching"
+      ],
+      "knowledge_cutoff": null,
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "pricing_page",
+          "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        },
+        {
+          "type": "docs",
+          "url": "https://docs.anthropic.com/en/docs/about-claude/models/overview",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        }
+      ]
+    },
+    {
+      "id": "anthropic/claude-sonnet-4-6",
+      "provider": "anthropic",
+      "name": "Claude Sonnet 4.6",
+      "aliases": [
+        "claude-sonnet-4-6"
+      ],
+      "context_window": 1000000,
+      "max_output_tokens": 64000,
+      "pricing": {
+        "input_per_million_usd": 3,
+        "output_per_million_usd": 15,
+        "cache_read_per_million_usd": 0.3,
+        "cache_write_per_million_usd": 3.75
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tool_use",
+        "vision",
+        "extended_thinking",
+        "prompt_caching"
+      ],
+      "knowledge_cutoff": null,
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "pricing_page",
+          "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        },
+        {
+          "type": "docs",
+          "url": "https://docs.anthropic.com/en/docs/about-claude/models/overview",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        }
+      ]
+    },
+    {
+      "id": "google/gemini-2.0-flash",
+      "provider": "google",
+      "name": "Gemini 2.0 Flash",
+      "aliases": [],
+      "context_window": null,
+      "max_output_tokens": null,
+      "pricing": {
+        "input_per_million_usd": 0.15,
+        "output_per_million_usd": 0.6,
+        "cache_read_per_million_usd": null,
+        "cache_write_per_million_usd": null
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video",
+          "audio"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "extended_thinking",
+        "tool_use",
+        "fine_tunable"
+      ],
+      "knowledge_cutoff": null,
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "pricing_page",
+          "url": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
+          "scraped_at": "2026-05-07T14:53:15.486Z"
+        },
+        {
+          "type": "model_card",
+          "url": "https://deepmind.google/technologies/gemini/",
+          "scraped_at": "2026-05-07T14:53:15.486Z"
+        }
+      ]
+    },
+    {
+      "id": "google/gemini-2.0-flash-lite",
+      "provider": "google",
+      "name": "Gemini 2.0 Flash Lite",
+      "aliases": [],
+      "context_window": null,
+      "max_output_tokens": null,
+      "pricing": {
+        "input_per_million_usd": 0.075,
+        "output_per_million_usd": 0.3,
+        "cache_read_per_million_usd": null,
+        "cache_write_per_million_usd": null
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video",
+          "audio"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "extended_thinking",
+        "tool_use",
+        "fine_tunable"
+      ],
+      "knowledge_cutoff": null,
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "pricing_page",
+          "url": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
+          "scraped_at": "2026-05-07T14:53:15.486Z"
+        },
+        {
+          "type": "model_card",
+          "url": "https://deepmind.google/technologies/gemini/",
+          "scraped_at": "2026-05-07T14:53:15.486Z"
+        }
+      ]
+    },
+    {
+      "id": "google/gemini-2.5-flash",
+      "provider": "google",
+      "name": "Gemini 2.5 Flash",
+      "aliases": [],
+      "context_window": null,
+      "max_output_tokens": null,
+      "pricing": {
+        "input_per_million_usd": 0.3,
+        "output_per_million_usd": 2.5,
+        "cache_read_per_million_usd": null,
+        "cache_write_per_million_usd": null
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "extended_thinking",
+        "tool_use",
+        "fine_tunable"
+      ],
+      "knowledge_cutoff": null,
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "pricing_page",
+          "url": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
+          "scraped_at": "2026-05-07T14:53:15.486Z"
+        },
+        {
+          "type": "model_card",
+          "url": "https://deepmind.google/technologies/gemini/",
+          "scraped_at": "2026-05-07T14:53:15.486Z"
+        }
+      ]
+    },
+    {
+      "id": "google/gemini-2.5-flash-lite",
+      "provider": "google",
+      "name": "Gemini 2.5 Flash Lite",
+      "aliases": [],
+      "context_window": null,
+      "max_output_tokens": null,
+      "pricing": {
+        "input_per_million_usd": 0.1,
+        "output_per_million_usd": 0.4,
+        "cache_read_per_million_usd": null,
+        "cache_write_per_million_usd": null
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video",
+          "audio"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "extended_thinking",
+        "tool_use",
+        "fine_tunable"
+      ],
+      "knowledge_cutoff": null,
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "pricing_page",
+          "url": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
+          "scraped_at": "2026-05-07T14:53:15.486Z"
+        },
+        {
+          "type": "model_card",
+          "url": "https://deepmind.google/technologies/gemini/",
+          "scraped_at": "2026-05-07T14:53:15.486Z"
+        }
+      ]
+    },
+    {
+      "id": "google/gemini-2.5-pro",
+      "provider": "google",
+      "name": "Gemini 2.5 Pro",
+      "aliases": [],
+      "context_window": null,
+      "max_output_tokens": null,
+      "pricing": {
+        "input_per_million_usd": 1.25,
+        "output_per_million_usd": 10,
+        "cache_read_per_million_usd": null,
+        "cache_write_per_million_usd": null
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video",
+          "audio"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "extended_thinking",
+        "tool_use",
+        "fine_tunable"
+      ],
+      "knowledge_cutoff": null,
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "pricing_page",
+          "url": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
+          "scraped_at": "2026-05-07T14:53:15.486Z"
+        },
+        {
+          "type": "model_card",
+          "url": "https://deepmind.google/technologies/gemini/",
+          "scraped_at": "2026-05-07T14:53:15.486Z"
+        }
+      ]
+    },
+    {
+      "id": "google/gemini-3-flash",
+      "provider": "google",
+      "name": "Gemini 3 Flash",
+      "aliases": [
+        "Gemini 3 Flash Preview"
+      ],
+      "context_window": null,
+      "max_output_tokens": null,
+      "pricing": {
+        "input_per_million_usd": 0.5,
+        "output_per_million_usd": 3,
+        "cache_read_per_million_usd": null,
+        "cache_write_per_million_usd": null
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "extended_thinking",
+        "tool_use",
+        "fine_tunable"
+      ],
+      "knowledge_cutoff": null,
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "pricing_page",
+          "url": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
+          "scraped_at": "2026-05-07T14:53:15.486Z"
+        },
+        {
+          "type": "model_card",
+          "url": "https://deepmind.google/technologies/gemini/",
+          "scraped_at": "2026-05-07T14:53:15.486Z"
+        }
+      ]
+    },
+    {
+      "id": "google/gemini-3-pro",
+      "provider": "google",
+      "name": "Gemini 3 Pro",
+      "aliases": [
+        "Gemini 3 Pro Preview"
+      ],
+      "context_window": null,
+      "max_output_tokens": null,
+      "pricing": {
+        "input_per_million_usd": 2,
+        "output_per_million_usd": 12,
+        "cache_read_per_million_usd": null,
+        "cache_write_per_million_usd": null
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video",
+          "audio"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "extended_thinking",
+        "tool_use",
+        "fine_tunable"
+      ],
+      "knowledge_cutoff": null,
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "pricing_page",
+          "url": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
+          "scraped_at": "2026-05-07T14:53:15.486Z"
+        },
+        {
+          "type": "model_card",
+          "url": "https://deepmind.google/technologies/gemini/",
+          "scraped_at": "2026-05-07T14:53:15.486Z"
+        }
+      ]
+    },
+    {
+      "id": "google/gemini-3.1-flash",
+      "provider": "google",
+      "name": "Gemini 3.1 Flash",
+      "aliases": [
+        "Gemini 3.1 Flash Preview"
+      ],
+      "context_window": null,
+      "max_output_tokens": null,
+      "pricing": {
+        "input_per_million_usd": 0.5,
+        "output_per_million_usd": 3,
+        "cache_read_per_million_usd": null,
+        "cache_write_per_million_usd": null
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "extended_thinking",
+        "tool_use",
+        "fine_tunable"
+      ],
+      "knowledge_cutoff": null,
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "pricing_page",
+          "url": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
+          "scraped_at": "2026-05-07T14:53:15.486Z"
+        },
+        {
+          "type": "model_card",
+          "url": "https://deepmind.google/technologies/gemini/",
+          "scraped_at": "2026-05-07T14:53:15.486Z"
+        }
+      ]
+    },
+    {
+      "id": "google/gemini-3.1-flash-lite",
+      "provider": "google",
+      "name": "Gemini 3.1 Flash-Lite",
+      "aliases": [],
+      "context_window": null,
+      "max_output_tokens": null,
+      "pricing": {
+        "input_per_million_usd": 0.25,
+        "output_per_million_usd": 1.5,
+        "cache_read_per_million_usd": null,
+        "cache_write_per_million_usd": null
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video",
+          "audio"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "extended_thinking",
+        "tool_use",
+        "fine_tunable"
+      ],
+      "knowledge_cutoff": null,
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "pricing_page",
+          "url": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
+          "scraped_at": "2026-05-07T14:53:15.486Z"
+        },
+        {
+          "type": "model_card",
+          "url": "https://deepmind.google/technologies/gemini/",
+          "scraped_at": "2026-05-07T14:53:15.486Z"
+        }
+      ]
+    },
+    {
+      "id": "google/gemini-3.1-pro",
+      "provider": "google",
+      "name": "Gemini 3.1 Pro",
+      "aliases": [
+        "Gemini 3.1 Pro Preview"
+      ],
+      "context_window": null,
+      "max_output_tokens": null,
+      "pricing": {
+        "input_per_million_usd": 2,
+        "output_per_million_usd": 12,
+        "cache_read_per_million_usd": null,
+        "cache_write_per_million_usd": null
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video",
+          "audio"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "extended_thinking",
+        "tool_use",
+        "fine_tunable"
+      ],
+      "knowledge_cutoff": null,
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [
+        {
+          "name": "artificial-analysis-intelligence-index",
+          "score": 57,
+          "unit": "score",
+          "source": "https://artificialanalysis.ai/models",
+          "source_name": "Artificial Analysis",
+          "as_of": "2026-05-07"
+        }
+      ],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "pricing_page",
+          "url": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
+          "scraped_at": "2026-05-07T14:53:15.486Z"
+        },
+        {
+          "type": "model_card",
+          "url": "https://deepmind.google/technologies/gemini/",
+          "scraped_at": "2026-05-07T14:53:15.486Z"
+        }
+      ]
+    },
+    {
+      "id": "google/gemma-4-26b",
+      "provider": "google",
+      "name": "Gemma 4 26B",
+      "aliases": [],
+      "context_window": null,
+      "max_output_tokens": null,
+      "pricing": {
+        "input_per_million_usd": 0.15,
+        "output_per_million_usd": 0.6,
+        "cache_read_per_million_usd": null,
+        "cache_write_per_million_usd": null
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "fine_tunable"
+      ],
+      "knowledge_cutoff": null,
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "pricing_page",
+          "url": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
+          "scraped_at": "2026-05-07T14:53:15.486Z"
+        },
+        {
+          "type": "model_card",
+          "url": "https://deepmind.google/technologies/gemini/",
+          "scraped_at": "2026-05-07T14:53:15.486Z"
+        }
+      ]
+    },
+    {
+      "id": "openai/gpt-5.4",
+      "provider": "openai",
+      "name": "GPT-5.4",
+      "aliases": [
+        "gpt-5.4-latest"
+      ],
+      "context_window": 1000000,
+      "max_output_tokens": 128000,
+      "pricing": {
+        "input_per_million_usd": 2.5,
+        "output_per_million_usd": 15,
+        "cache_read_per_million_usd": 0.25,
+        "cache_write_per_million_usd": null
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "extended_thinking",
+        "vision",
+        "function_calling",
+        "web_search",
+        "fine_tunable"
+      ],
+      "knowledge_cutoff": "2025-08",
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [
+        {
+          "name": "artificial-analysis-intelligence-index",
+          "score": 57,
+          "unit": "score",
+          "source": "https://artificialanalysis.ai/models",
+          "source_name": "Artificial Analysis",
+          "as_of": "2026-05-07"
+        }
+      ],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "pricing_page",
+          "url": "https://openai.com/api/pricing/",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        },
+        {
+          "type": "docs",
+          "url": "https://platform.openai.com/docs/models",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        }
+      ]
+    },
+    {
+      "id": "openai/gpt-5.4-mini",
+      "provider": "openai",
+      "name": "GPT-5.4 mini",
+      "aliases": [
+        "gpt-5.4-mini-latest"
+      ],
+      "context_window": 400000,
+      "max_output_tokens": 128000,
+      "pricing": {
+        "input_per_million_usd": 0.75,
+        "output_per_million_usd": 4.5,
+        "cache_read_per_million_usd": 0.075,
+        "cache_write_per_million_usd": null
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "extended_thinking",
+        "vision",
+        "function_calling",
+        "web_search",
+        "fine_tunable"
+      ],
+      "knowledge_cutoff": "2025-08",
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "pricing_page",
+          "url": "https://openai.com/api/pricing/",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        },
+        {
+          "type": "docs",
+          "url": "https://platform.openai.com/docs/models",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        }
+      ]
+    },
+    {
+      "id": "openai/gpt-5.5",
+      "provider": "openai",
+      "name": "GPT-5.5",
+      "aliases": [
+        "gpt-5.5-latest"
+      ],
+      "context_window": 1000000,
+      "max_output_tokens": 128000,
+      "pricing": {
+        "input_per_million_usd": 5,
+        "output_per_million_usd": 30,
+        "cache_read_per_million_usd": 0.5,
+        "cache_write_per_million_usd": null
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "extended_thinking",
+        "vision",
+        "function_calling",
+        "web_search",
+        "fine_tunable"
+      ],
+      "knowledge_cutoff": "2025-12",
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [
+        {
+          "name": "artificial-analysis-intelligence-index",
+          "score": 59,
+          "unit": "score",
+          "source": "https://artificialanalysis.ai/models",
+          "source_name": "Artificial Analysis",
+          "as_of": "2026-05-07"
+        }
+      ],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "pricing_page",
+          "url": "https://openai.com/api/pricing/",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        },
+        {
+          "type": "docs",
+          "url": "https://platform.openai.com/docs/models",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        }
+      ]
+    },
+    {
+      "id": "openai/gpt-image-2",
+      "provider": "openai",
+      "name": "GPT Image 2",
+      "aliases": [],
+      "context_window": null,
+      "max_output_tokens": null,
+      "pricing": {
+        "input_per_million_usd": 8,
+        "output_per_million_usd": 30,
+        "cache_read_per_million_usd": 2,
+        "cache_write_per_million_usd": null
+      },
+      "modalities": {
+        "input": [
+          "image"
+        ],
+        "output": [
+          "image"
+        ]
+      },
+      "capabilities": [
+        "image_generation",
+        "vision"
+      ],
+      "knowledge_cutoff": null,
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "pricing_page",
+          "url": "https://openai.com/api/pricing/",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        },
+        {
+          "type": "docs",
+          "url": "https://platform.openai.com/docs/models",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        }
+      ]
+    },
+    {
+      "id": "openai/gpt-realtime-1.5",
+      "provider": "openai",
+      "name": "GPT Realtime 1.5",
+      "aliases": [],
+      "context_window": null,
+      "max_output_tokens": null,
+      "pricing": {
+        "input_per_million_usd": 32,
+        "output_per_million_usd": 64,
+        "cache_read_per_million_usd": 0.4,
+        "cache_write_per_million_usd": null
+      },
+      "modalities": {
+        "input": [
+          "audio"
+        ],
+        "output": [
+          "audio"
+        ]
+      },
+      "capabilities": [
+        "audio_input",
+        "audio_output"
+      ],
+      "knowledge_cutoff": null,
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "pricing_page",
+          "url": "https://openai.com/api/pricing/",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        },
+        {
+          "type": "docs",
+          "url": "https://platform.openai.com/docs/models",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        }
+      ]
+    },
+    {
+      "id": "xai/grok-4-1-fast-non-reasoning",
+      "provider": "xai",
+      "name": "Grok 4 1 Fast Non Reasoning",
+      "aliases": [],
+      "context_window": 2000000,
+      "max_output_tokens": null,
+      "pricing": {
+        "input_per_million_usd": 0.2,
+        "output_per_million_usd": 0.5,
+        "cache_read_per_million_usd": null,
+        "cache_write_per_million_usd": null
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tool_use"
+      ],
+      "knowledge_cutoff": null,
+      "released_at": null,
+      "deprecated": true,
+      "deprecation_date": "2026-05-15",
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "docs",
+          "url": "https://docs.x.ai/developers/models",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        }
+      ]
+    },
+    {
+      "id": "xai/grok-4-1-fast-reasoning",
+      "provider": "xai",
+      "name": "Grok 4 1 Fast Reasoning",
+      "aliases": [],
+      "context_window": 2000000,
+      "max_output_tokens": null,
+      "pricing": {
+        "input_per_million_usd": 0.2,
+        "output_per_million_usd": 0.5,
+        "cache_read_per_million_usd": null,
+        "cache_write_per_million_usd": null
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tool_use",
+        "extended_thinking"
+      ],
+      "knowledge_cutoff": null,
+      "released_at": null,
+      "deprecated": true,
+      "deprecation_date": "2026-05-15",
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "docs",
+          "url": "https://docs.x.ai/developers/models",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        }
+      ]
+    },
+    {
+      "id": "xai/grok-4.20-0309-non-reasoning",
+      "provider": "xai",
+      "name": "Grok 4.20 0309 Non Reasoning",
+      "aliases": [],
+      "context_window": 2000000,
+      "max_output_tokens": null,
+      "pricing": {
+        "input_per_million_usd": 1.25,
+        "output_per_million_usd": 2.5,
+        "cache_read_per_million_usd": null,
+        "cache_write_per_million_usd": null
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tool_use"
+      ],
+      "knowledge_cutoff": null,
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "docs",
+          "url": "https://docs.x.ai/developers/models",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        }
+      ]
+    },
+    {
+      "id": "xai/grok-4.20-0309-reasoning",
+      "provider": "xai",
+      "name": "Grok 4.20 0309 Reasoning",
+      "aliases": [],
+      "context_window": 2000000,
+      "max_output_tokens": null,
+      "pricing": {
+        "input_per_million_usd": 1.25,
+        "output_per_million_usd": 2.5,
+        "cache_read_per_million_usd": null,
+        "cache_write_per_million_usd": null
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tool_use",
+        "extended_thinking"
+      ],
+      "knowledge_cutoff": null,
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "docs",
+          "url": "https://docs.x.ai/developers/models",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        }
+      ]
+    },
+    {
+      "id": "xai/grok-4.20-multi-agent-0309",
+      "provider": "xai",
+      "name": "Grok 4.20 Multi Agent 0309",
+      "aliases": [],
+      "context_window": 2000000,
+      "max_output_tokens": null,
+      "pricing": {
+        "input_per_million_usd": 1.25,
+        "output_per_million_usd": 2.5,
+        "cache_read_per_million_usd": null,
+        "cache_write_per_million_usd": null
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tool_use",
+        "extended_thinking"
+      ],
+      "knowledge_cutoff": null,
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "docs",
+          "url": "https://docs.x.ai/developers/models",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        }
+      ]
+    },
+    {
+      "id": "xai/grok-4.3",
+      "provider": "xai",
+      "name": "Grok 4.3",
+      "aliases": [
+        "grok-4"
+      ],
+      "context_window": 1000000,
+      "max_output_tokens": null,
+      "pricing": {
+        "input_per_million_usd": 1.25,
+        "output_per_million_usd": 2.5,
+        "cache_read_per_million_usd": null,
+        "cache_write_per_million_usd": null
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tool_use",
+        "extended_thinking"
+      ],
+      "knowledge_cutoff": "2024-11",
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "docs",
+          "url": "https://docs.x.ai/developers/models",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        }
+      ]
+    },
+    {
+      "id": "xai/grok-imagine-image",
+      "provider": "xai",
+      "name": "Grok Imagine Image",
+      "aliases": [],
+      "context_window": null,
+      "max_output_tokens": null,
+      "pricing": {
+        "input_per_million_usd": null,
+        "output_per_million_usd": 0.02,
+        "cache_read_per_million_usd": null,
+        "cache_write_per_million_usd": null
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "image"
+        ]
+      },
+      "capabilities": [
+        "image_generation",
+        "vision"
+      ],
+      "knowledge_cutoff": null,
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "docs",
+          "url": "https://docs.x.ai/developers/models",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        }
+      ]
+    },
+    {
+      "id": "xai/grok-imagine-image-pro",
+      "provider": "xai",
+      "name": "Grok Imagine Image Pro",
+      "aliases": [],
+      "context_window": null,
+      "max_output_tokens": null,
+      "pricing": {
+        "input_per_million_usd": null,
+        "output_per_million_usd": 0.07,
+        "cache_read_per_million_usd": null,
+        "cache_write_per_million_usd": null
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "image"
+        ]
+      },
+      "capabilities": [
+        "image_generation",
+        "vision"
+      ],
+      "knowledge_cutoff": null,
+      "released_at": null,
+      "deprecated": true,
+      "deprecation_date": "2026-05-15",
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "docs",
+          "url": "https://docs.x.ai/developers/models",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        }
+      ]
+    },
+    {
+      "id": "xai/grok-imagine-image-quality",
+      "provider": "xai",
+      "name": "Grok Imagine Image Quality",
+      "aliases": [],
+      "context_window": null,
+      "max_output_tokens": null,
+      "pricing": {
+        "input_per_million_usd": null,
+        "output_per_million_usd": 0.05,
+        "cache_read_per_million_usd": null,
+        "cache_write_per_million_usd": null
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "image"
+        ]
+      },
+      "capabilities": [
+        "image_generation",
+        "vision"
+      ],
+      "knowledge_cutoff": null,
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "docs",
+          "url": "https://docs.x.ai/developers/models",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        }
+      ]
+    },
+    {
+      "id": "xai/grok-imagine-video",
+      "provider": "xai",
+      "name": "Grok Imagine Video",
+      "aliases": [],
+      "context_window": null,
+      "max_output_tokens": null,
+      "pricing": {
+        "input_per_million_usd": null,
+        "output_per_million_usd": 0.05,
+        "cache_read_per_million_usd": null,
+        "cache_write_per_million_usd": null
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "video"
+        ]
+      },
+      "capabilities": [
+        "video_generation",
+        "vision"
+      ],
+      "knowledge_cutoff": null,
+      "released_at": null,
+      "deprecated": false,
+      "deprecation_date": null,
+      "benchmarks": [],
+      "last_updated": "2026-05-07",
+      "sources": [
+        {
+          "type": "docs",
+          "url": "https://docs.x.ai/developers/models",
+          "scraped_at": "2026-05-07T14:57:12.467Z"
+        }
+      ]
+    }
+  ]
 }

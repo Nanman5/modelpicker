@@ -74,15 +74,22 @@ export function createLLMClient(opts: ExtractOptions = {}): LLMClient {
         ],
       });
 
-      const res = await undiciFetch(`${baseUrl}/chat/completions`, {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-          authorization: `Bearer ${apiKey}`,
-          accept: "application/json",
-        },
-        body,
-      });
+      let res;
+      try {
+        res = await undiciFetch(`${baseUrl}/chat/completions`, {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+            authorization: `Bearer ${apiKey}`,
+            accept: "application/json",
+          },
+          body,
+        });
+      } catch (err) {
+        const cause = (err as { cause?: { code?: string; message?: string } }).cause;
+        const detail = cause?.code || cause?.message || (err as Error).message;
+        throw new Error(`LLM API request failed: ${detail}`);
+      }
 
       const text = await res.text();
       if (!res.ok) {
