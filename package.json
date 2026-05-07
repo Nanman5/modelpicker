@@ -1,0 +1,56 @@
+{
+  "name": "modelpicker-mcp",
+  "version": "0.1.0",
+  "description": "MCP server that gives AI agents fresh, normalized facts about LLMs (no opinions, no recommendations).",
+  "type": "module",
+  "bin": {
+    "modelpicker-mcp": "./dist/mcp/server.js"
+  },
+  "files": [
+    "dist",
+    "data/models.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsx src/mcp/server.ts",
+    "scrape": "tsx src/pipeline/run.ts",
+    "scrape:dry": "tsx src/pipeline/run.ts --dry-run",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm run test && npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "llm",
+    "ai",
+    "models",
+    "claude",
+    "openai",
+    "anthropic",
+    "google",
+    "xai",
+    "pricing"
+  ],
+  "author": "Hernán López",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "cheerio": "^1.0.0",
+    "undici": "^7.0.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsup": "^8.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.0.0"
+  }
+}

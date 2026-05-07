@@ -1,0 +1,50 @@
+name: scrape-daily
+
+on:
+  schedule:
+    - cron: "17 6 * * *" # 06:17 UTC daily — odd time to be polite to provider sites
+  workflow_dispatch:
+    inputs:
+      only:
+        description: "Comma-separated provider ids to scrape (default: all)"
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - name: Run scraper pipeline
+        env:
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          NVIDIA_EXTRACTION_MODEL: ${{ vars.NVIDIA_EXTRACTION_MODEL }}
+          NVIDIA_BASE_URL: ${{ vars.NVIDIA_BASE_URL }}
+        run: |
+          if [ -n "${{ inputs.only }}" ]; then
+            npm run scrape -- --only "${{ inputs.only }}"
+          else
+            npm run scrape
+          fi
+
+      - name: Commit dataset if changed
+        run: |
+          git config user.name "modelpicker-bot"
+          git config user.email "bot@modelpicker.local"
+          if [ -n "$(git status --porcelain data/models.json)" ]; then
+            git add data/models.json
+            git commit -m "chore(data): refresh dataset $(date -u +%Y-%m-%d)"
+            git push
+          else
+            echo "No changes in data/models.json"
+          fi
