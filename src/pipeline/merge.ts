@@ -40,9 +40,26 @@ export function mergeSnapshots(
       finalByProvider.set(snap.provider.id, priorByProvider.get(snap.provider.id)!);
       continue;
     }
+
+    // Preserve benchmark attachments across provider re-scrapes — provider
+    // scrapers don't fill `benchmarks` (only the benchmark stage does), so
+    // overwriting blindly would lose data on partial runs (e.g. --skip-benchmarks).
+    const priorModels = priorByProvider.get(snap.provider.id)?.models ?? [];
+    const priorById = new Map(priorModels.map((m) => [m.id, m]));
+    const priorByAlias = new Map<string, (typeof priorModels)[number]>();
+    for (const m of priorModels) for (const a of m.aliases) priorByAlias.set(a, m);
+
+    const merged = snap.models.map((m) => {
+      const prior = priorById.get(m.id) ?? m.aliases.map((a) => priorByAlias.get(a)).find(Boolean);
+      if (prior && prior.benchmarks.length > 0 && m.benchmarks.length === 0) {
+        return { ...m, benchmarks: prior.benchmarks };
+      }
+      return m;
+    });
+
     finalByProvider.set(snap.provider.id, {
       provider: snap.provider,
-      models: snap.models,
+      models: merged,
     });
   }
 

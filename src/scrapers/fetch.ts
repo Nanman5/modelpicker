@@ -75,6 +75,15 @@ export function htmlToStructuredText(html: string, opts: { maxChars?: number } =
     const t = $(el).clone().children().remove().end().text().trim();
     if (t === "Loading..." || t === "Loading…" || t === "...") $(el).remove();
   });
+  // Belt-and-braces: even though .text() ignores attributes, scrub them anyway
+  // so any future change that switches to .html() can't accidentally leak inline
+  // event handlers, styles, or click trackers.
+  $("[style]").removeAttr("style");
+  $("[onclick], [onmouseover], [onload]").each((_, el) => {
+    for (const attr of Object.keys(el.attribs)) {
+      if (attr.startsWith("on")) $(el).removeAttr(attr);
+    }
+  });
 
   $("table").each((_, table) => {
     const rows: string[] = [];
@@ -114,6 +123,8 @@ export function htmlToStructuredText(html: string, opts: { maxChars?: number } =
     .text()
     .replace(/ /g, " ")
     .replace(/(?:Loading\.{2,3}\s*){2,}/g, "")
+    .replace(/[​-‏‪-‮⁠-⁯﻿]/g, "") // zero-width / bidi / BOM
+    .replace(/https?:\/\/[^\s)\]>"']+/g, "[url]") // bare URLs are noise — sources[] tracks the real ones
     .replace(/[ \t]+/g, " ")
     .replace(/\n[ \t]+/g, "\n")
     .replace(/\n{3,}/g, "\n\n")

@@ -41,12 +41,16 @@ export function attachBenchmarks(
       continue;
     }
     const list = attachments.get(target.id) ?? [...target.benchmarks];
-    // dedupe by (name + source_name); newer score wins
+    // dedupe by (name + source_name); higher score wins (so an "xhigh" variant
+    // doesn't get overwritten by a lower-effort run of the same model).
     const idx = list.findIndex(
       (b) => b.name === rec.benchmark.name && b.source_name === rec.benchmark.source_name,
     );
-    if (idx >= 0) list[idx] = rec.benchmark;
-    else list.push(rec.benchmark);
+    if (idx >= 0) {
+      if (rec.benchmark.score > list[idx]!.score) list[idx] = rec.benchmark;
+    } else {
+      list.push(rec.benchmark);
+    }
     attachments.set(target.id, list);
     attached++;
   }

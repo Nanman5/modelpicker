@@ -1,7 +1,7 @@
 {
   "$schema": "https://modelpicker.dev/schema/v1.json",
   "version": 1,
-  "generated_at": "2026-05-08T08:00:15.907Z",
+  "generated_at": "2026-05-08T17:01:11.587Z",
   "providers": [
     {
       "id": "anthropic",
@@ -60,25 +60,24 @@
       "capabilities": [
         "tool_use",
         "vision",
-        "extended_thinking",
-        "prompt_caching"
+        "extended_thinking"
       ],
       "knowledge_cutoff": null,
       "released_at": null,
       "deprecated": false,
       "deprecation_date": null,
       "benchmarks": [],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "pricing_page",
           "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         },
         {
           "type": "docs",
           "url": "https://docs.anthropic.com/en/docs/about-claude/models/overview",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         }
       ]
     },
@@ -109,25 +108,24 @@
       "capabilities": [
         "tool_use",
         "vision",
-        "extended_thinking",
-        "prompt_caching"
+        "extended_thinking"
       ],
       "knowledge_cutoff": null,
       "released_at": null,
       "deprecated": false,
       "deprecation_date": null,
       "benchmarks": [],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "pricing_page",
           "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         },
         {
           "type": "docs",
           "url": "https://docs.anthropic.com/en/docs/about-claude/models/overview",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         }
       ]
     },
@@ -158,25 +156,24 @@
       "capabilities": [
         "tool_use",
         "vision",
-        "extended_thinking",
-        "prompt_caching"
+        "extended_thinking"
       ],
       "knowledge_cutoff": "2025-02",
       "released_at": null,
       "deprecated": false,
       "deprecation_date": null,
       "benchmarks": [],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "pricing_page",
           "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         },
         {
           "type": "docs",
           "url": "https://docs.anthropic.com/en/docs/about-claude/models/overview",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         }
       ]
     },
@@ -207,25 +204,24 @@
       "capabilities": [
         "tool_use",
         "vision",
-        "extended_thinking",
-        "prompt_caching"
+        "extended_thinking"
       ],
       "knowledge_cutoff": null,
       "released_at": null,
       "deprecated": true,
       "deprecation_date": null,
       "benchmarks": [],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "pricing_page",
           "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         },
         {
           "type": "docs",
           "url": "https://docs.anthropic.com/en/docs/about-claude/models/overview",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         }
       ]
     },
@@ -236,8 +232,8 @@
       "aliases": [
         "claude-opus-4"
       ],
-      "context_window": null,
-      "max_output_tokens": null,
+      "context_window": 1000000,
+      "max_output_tokens": 128000,
       "pricing": {
         "input_per_million_usd": 15,
         "output_per_million_usd": 75,
@@ -256,25 +252,24 @@
       "capabilities": [
         "tool_use",
         "vision",
-        "extended_thinking",
-        "prompt_caching"
+        "extended_thinking"
       ],
       "knowledge_cutoff": null,
       "released_at": null,
       "deprecated": false,
       "deprecation_date": null,
       "benchmarks": [],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "pricing_page",
           "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         },
         {
           "type": "docs",
           "url": "https://docs.anthropic.com/en/docs/about-claude/models/overview",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         }
       ]
     },
@@ -285,8 +280,8 @@
       "aliases": [
         "claude-opus-4-1"
       ],
-      "context_window": null,
-      "max_output_tokens": null,
+      "context_window": 1000000,
+      "max_output_tokens": 128000,
       "pricing": {
         "input_per_million_usd": 15,
         "output_per_million_usd": 75,
@@ -305,25 +300,24 @@
       "capabilities": [
         "tool_use",
         "vision",
-        "extended_thinking",
-        "prompt_caching"
+        "extended_thinking"
       ],
       "knowledge_cutoff": null,
       "released_at": null,
       "deprecated": false,
       "deprecation_date": null,
       "benchmarks": [],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "pricing_page",
           "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         },
         {
           "type": "docs",
           "url": "https://docs.anthropic.com/en/docs/about-claude/models/overview",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         }
       ]
     },
@@ -335,7 +329,7 @@
         "claude-opus-4-5"
       ],
       "context_window": 1000000,
-      "max_output_tokens": null,
+      "max_output_tokens": 128000,
       "pricing": {
         "input_per_million_usd": 5,
         "output_per_million_usd": 25,
@@ -354,25 +348,24 @@
       "capabilities": [
         "tool_use",
         "vision",
-        "extended_thinking",
-        "prompt_caching"
+        "extended_thinking"
       ],
       "knowledge_cutoff": null,
       "released_at": null,
       "deprecated": false,
       "deprecation_date": null,
       "benchmarks": [],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "pricing_page",
           "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         },
         {
           "type": "docs",
           "url": "https://docs.anthropic.com/en/docs/about-claude/models/overview",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         }
       ]
     },
@@ -384,7 +377,7 @@
         "claude-opus-4-6"
       ],
       "context_window": 1000000,
-      "max_output_tokens": 64000,
+      "max_output_tokens": 128000,
       "pricing": {
         "input_per_million_usd": 5,
         "output_per_million_usd": 25,
@@ -403,25 +396,24 @@
       "capabilities": [
         "tool_use",
         "vision",
-        "extended_thinking",
-        "prompt_caching"
+        "extended_thinking"
       ],
       "knowledge_cutoff": null,
       "released_at": null,
       "deprecated": false,
       "deprecation_date": null,
       "benchmarks": [],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "pricing_page",
           "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         },
         {
           "type": "docs",
           "url": "https://docs.anthropic.com/en/docs/about-claude/models/overview",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         }
       ]
     },
@@ -452,8 +444,7 @@
       "capabilities": [
         "tool_use",
         "vision",
-        "extended_thinking",
-        "prompt_caching"
+        "extended_thinking"
       ],
       "knowledge_cutoff": "2026-01",
       "released_at": null,
@@ -466,20 +457,20 @@
           "unit": "score",
           "source": "https://artificialanalysis.ai/models",
           "source_name": "Artificial Analysis",
-          "as_of": "2026-05-07"
+          "as_of": "2026-05-08"
         }
       ],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "pricing_page",
           "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         },
         {
           "type": "docs",
           "url": "https://docs.anthropic.com/en/docs/about-claude/models/overview",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         }
       ]
     },
@@ -510,25 +501,24 @@
       "capabilities": [
         "tool_use",
         "vision",
-        "extended_thinking",
-        "prompt_caching"
+        "extended_thinking"
       ],
       "knowledge_cutoff": null,
       "released_at": null,
       "deprecated": true,
       "deprecation_date": null,
       "benchmarks": [],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "pricing_page",
           "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         },
         {
           "type": "docs",
           "url": "https://docs.anthropic.com/en/docs/about-claude/models/overview",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         }
       ]
     },
@@ -539,8 +529,8 @@
       "aliases": [
         "claude-sonnet-4"
       ],
-      "context_window": null,
-      "max_output_tokens": null,
+      "context_window": 1000000,
+      "max_output_tokens": 64000,
       "pricing": {
         "input_per_million_usd": 3,
         "output_per_million_usd": 15,
@@ -559,25 +549,24 @@
       "capabilities": [
         "tool_use",
         "vision",
-        "extended_thinking",
-        "prompt_caching"
+        "extended_thinking"
       ],
       "knowledge_cutoff": null,
       "released_at": null,
       "deprecated": false,
       "deprecation_date": null,
       "benchmarks": [],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "pricing_page",
           "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         },
         {
           "type": "docs",
           "url": "https://docs.anthropic.com/en/docs/about-claude/models/overview",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         }
       ]
     },
@@ -589,7 +578,7 @@
         "claude-sonnet-4-5"
       ],
       "context_window": 1000000,
-      "max_output_tokens": null,
+      "max_output_tokens": 64000,
       "pricing": {
         "input_per_million_usd": 3,
         "output_per_million_usd": 15,
@@ -608,25 +597,24 @@
       "capabilities": [
         "tool_use",
         "vision",
-        "extended_thinking",
-        "prompt_caching"
+        "extended_thinking"
       ],
       "knowledge_cutoff": null,
       "released_at": null,
       "deprecated": false,
       "deprecation_date": null,
       "benchmarks": [],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "pricing_page",
           "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         },
         {
           "type": "docs",
           "url": "https://docs.anthropic.com/en/docs/about-claude/models/overview",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         }
       ]
     },
@@ -657,25 +645,24 @@
       "capabilities": [
         "tool_use",
         "vision",
-        "extended_thinking",
-        "prompt_caching"
+        "extended_thinking"
       ],
       "knowledge_cutoff": null,
       "released_at": null,
       "deprecated": false,
       "deprecation_date": null,
       "benchmarks": [],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "pricing_page",
           "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         },
         {
           "type": "docs",
           "url": "https://docs.anthropic.com/en/docs/about-claude/models/overview",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         }
       ]
     },
@@ -705,25 +692,24 @@
       },
       "capabilities": [
         "extended_thinking",
-        "tool_use",
-        "fine_tunable"
+        "tool_use"
       ],
       "knowledge_cutoff": null,
       "released_at": null,
       "deprecated": false,
       "deprecation_date": null,
       "benchmarks": [],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "pricing_page",
           "url": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
-          "scraped_at": "2026-05-07T14:53:15.486Z"
+          "scraped_at": "2026-05-08T17:01:11.587Z"
         },
         {
           "type": "model_card",
           "url": "https://deepmind.google/technologies/gemini/",
-          "scraped_at": "2026-05-07T14:53:15.486Z"
+          "scraped_at": "2026-05-08T17:01:11.587Z"
         }
       ]
     },
@@ -753,25 +739,24 @@
       },
       "capabilities": [
         "extended_thinking",
-        "tool_use",
-        "fine_tunable"
+        "tool_use"
       ],
       "knowledge_cutoff": null,
       "released_at": null,
       "deprecated": false,
       "deprecation_date": null,
       "benchmarks": [],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "pricing_page",
           "url": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
-          "scraped_at": "2026-05-07T14:53:15.486Z"
+          "scraped_at": "2026-05-08T17:01:11.587Z"
         },
         {
           "type": "model_card",
           "url": "https://deepmind.google/technologies/gemini/",
-          "scraped_at": "2026-05-07T14:53:15.486Z"
+          "scraped_at": "2026-05-08T17:01:11.587Z"
         }
       ]
     },
@@ -779,46 +764,51 @@
       "id": "google/gemini-2.5-flash",
       "provider": "google",
       "name": "Gemini 2.5 Flash",
-      "aliases": [],
+      "aliases": [
+        "Gemini 2.5 Flash Image",
+        "Gemini 2.5 Flash Live API"
+      ],
       "context_window": null,
       "max_output_tokens": null,
       "pricing": {
         "input_per_million_usd": 0.3,
         "output_per_million_usd": 2.5,
-        "cache_read_per_million_usd": null,
-        "cache_write_per_million_usd": null
+        "cache_read_per_million_usd": 0.03,
+        "cache_write_per_million_usd": 0.03
       },
       "modalities": {
         "input": [
           "text",
           "image",
-          "video"
+          "video",
+          "audio"
         ],
         "output": [
-          "text"
+          "text",
+          "image",
+          "audio"
         ]
       },
       "capabilities": [
-        "extended_thinking",
-        "tool_use",
-        "fine_tunable"
+        "image_generation",
+        "audio_input"
       ],
       "knowledge_cutoff": null,
       "released_at": null,
       "deprecated": false,
       "deprecation_date": null,
       "benchmarks": [],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "pricing_page",
           "url": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
-          "scraped_at": "2026-05-07T14:53:15.486Z"
+          "scraped_at": "2026-05-08T17:01:11.587Z"
         },
         {
           "type": "model_card",
           "url": "https://deepmind.google/technologies/gemini/",
-          "scraped_at": "2026-05-07T14:53:15.486Z"
+          "scraped_at": "2026-05-08T17:01:11.587Z"
         }
       ]
     },
@@ -832,8 +822,8 @@
       "pricing": {
         "input_per_million_usd": 0.1,
         "output_per_million_usd": 0.4,
-        "cache_read_per_million_usd": null,
-        "cache_write_per_million_usd": null
+        "cache_read_per_million_usd": 0.01,
+        "cache_write_per_million_usd": 0.01
       },
       "modalities": {
         "input": [
@@ -848,25 +838,24 @@
       },
       "capabilities": [
         "extended_thinking",
-        "tool_use",
-        "fine_tunable"
+        "tool_use"
       ],
       "knowledge_cutoff": null,
       "released_at": null,
       "deprecated": false,
       "deprecation_date": null,
       "benchmarks": [],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "pricing_page",
           "url": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
-          "scraped_at": "2026-05-07T14:53:15.486Z"
+          "scraped_at": "2026-05-08T17:01:11.587Z"
         },
         {
           "type": "model_card",
           "url": "https://deepmind.google/technologies/gemini/",
-          "scraped_at": "2026-05-07T14:53:15.486Z"
+          "scraped_at": "2026-05-08T17:01:11.587Z"
         }
       ]
     },
@@ -874,14 +863,16 @@
       "id": "google/gemini-2.5-pro",
       "provider": "google",
       "name": "Gemini 2.5 Pro",
-      "aliases": [],
+      "aliases": [
+        "Gemini 2.5 ProComputer Use-Preview"
+      ],
       "context_window": null,
       "max_output_tokens": null,
       "pricing": {
         "input_per_million_usd": 1.25,
         "output_per_million_usd": 10,
-        "cache_read_per_million_usd": null,
-        "cache_write_per_million_usd": null
+        "cache_read_per_million_usd": 0.13,
+        "cache_write_per_million_usd": 0.25
       },
       "modalities": {
         "input": [
@@ -904,17 +895,17 @@
       "deprecated": false,
       "deprecation_date": null,
       "benchmarks": [],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "pricing_page",
           "url": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
-          "scraped_at": "2026-05-07T14:53:15.486Z"
+          "scraped_at": "2026-05-08T17:01:11.587Z"
         },
         {
           "type": "model_card",
           "url": "https://deepmind.google/technologies/gemini/",
-          "scraped_at": "2026-05-07T14:53:15.486Z"
+          "scraped_at": "2026-05-08T17:01:11.587Z"
         }
       ]
     },
@@ -930,8 +921,8 @@
       "pricing": {
         "input_per_million_usd": 0.5,
         "output_per_million_usd": 3,
-        "cache_read_per_million_usd": null,
-        "cache_write_per_million_usd": null
+        "cache_read_per_million_usd": 0.05,
+        "cache_write_per_million_usd": 0.05
       },
       "modalities": {
         "input": [
@@ -945,25 +936,24 @@
       },
       "capabilities": [
         "extended_thinking",
-        "tool_use",
-        "fine_tunable"
+        "tool_use"
       ],
       "knowledge_cutoff": null,
       "released_at": null,
       "deprecated": false,
       "deprecation_date": null,
       "benchmarks": [],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "pricing_page",
           "url": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
-          "scraped_at": "2026-05-07T14:53:15.486Z"
+          "scraped_at": "2026-05-08T17:01:11.587Z"
         },
         {
           "type": "model_card",
           "url": "https://deepmind.google/technologies/gemini/",
-          "scraped_at": "2026-05-07T14:53:15.486Z"
+          "scraped_at": "2026-05-08T17:01:11.587Z"
         }
       ]
     },
@@ -979,8 +969,8 @@
       "pricing": {
         "input_per_million_usd": 2,
         "output_per_million_usd": 12,
-        "cache_read_per_million_usd": null,
-        "cache_write_per_million_usd": null
+        "cache_read_per_million_usd": 0.2,
+        "cache_write_per_million_usd": 0.4
       },
       "modalities": {
         "input": [
@@ -1003,17 +993,17 @@
       "deprecated": false,
       "deprecation_date": null,
       "benchmarks": [],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "pricing_page",
           "url": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
-          "scraped_at": "2026-05-07T14:53:15.486Z"
+          "scraped_at": "2026-05-08T17:01:11.587Z"
         },
         {
           "type": "model_card",
           "url": "https://deepmind.google/technologies/gemini/",
-          "scraped_at": "2026-05-07T14:53:15.486Z"
+          "scraped_at": "2026-05-08T17:01:11.587Z"
         }
       ]
     },
@@ -1022,7 +1012,7 @@
       "provider": "google",
       "name": "Gemini 3.1 Flash",
       "aliases": [
-        "Gemini 3.1 Flash Preview"
+        "Gemini 3.1 Flash Image Preview"
       ],
       "context_window": null,
       "max_output_tokens": null,
@@ -1035,34 +1025,32 @@
       "modalities": {
         "input": [
           "text",
-          "image",
-          "video"
+          "image"
         ],
         "output": [
-          "text"
+          "text",
+          "image"
         ]
       },
       "capabilities": [
-        "extended_thinking",
-        "tool_use",
-        "fine_tunable"
+        "image_generation"
       ],
       "knowledge_cutoff": null,
       "released_at": null,
       "deprecated": false,
       "deprecation_date": null,
       "benchmarks": [],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "pricing_page",
           "url": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
-          "scraped_at": "2026-05-07T14:53:15.486Z"
+          "scraped_at": "2026-05-08T17:01:11.587Z"
         },
         {
           "type": "model_card",
           "url": "https://deepmind.google/technologies/gemini/",
-          "scraped_at": "2026-05-07T14:53:15.486Z"
+          "scraped_at": "2026-05-08T17:01:11.587Z"
         }
       ]
     },
@@ -1076,8 +1064,8 @@
       "pricing": {
         "input_per_million_usd": 0.25,
         "output_per_million_usd": 1.5,
-        "cache_read_per_million_usd": null,
-        "cache_write_per_million_usd": null
+        "cache_read_per_million_usd": 0.025,
+        "cache_write_per_million_usd": 0.025
       },
       "modalities": {
         "input": [
@@ -1092,25 +1080,24 @@
       },
       "capabilities": [
         "extended_thinking",
-        "tool_use",
-        "fine_tunable"
+        "tool_use"
       ],
       "knowledge_cutoff": null,
       "released_at": null,
       "deprecated": false,
       "deprecation_date": null,
       "benchmarks": [],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "pricing_page",
           "url": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
-          "scraped_at": "2026-05-07T14:53:15.486Z"
+          "scraped_at": "2026-05-08T17:01:11.587Z"
         },
         {
           "type": "model_card",
           "url": "https://deepmind.google/technologies/gemini/",
-          "scraped_at": "2026-05-07T14:53:15.486Z"
+          "scraped_at": "2026-05-08T17:01:11.587Z"
         }
       ]
     },
@@ -1126,8 +1113,8 @@
       "pricing": {
         "input_per_million_usd": 2,
         "output_per_million_usd": 12,
-        "cache_read_per_million_usd": null,
-        "cache_write_per_million_usd": null
+        "cache_read_per_million_usd": 0.2,
+        "cache_write_per_million_usd": 0.4
       },
       "modalities": {
         "input": [
@@ -1159,60 +1146,17 @@
           "as_of": "2026-05-07"
         }
       ],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "pricing_page",
           "url": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
-          "scraped_at": "2026-05-07T14:53:15.486Z"
+          "scraped_at": "2026-05-08T17:01:11.587Z"
         },
         {
           "type": "model_card",
           "url": "https://deepmind.google/technologies/gemini/",
-          "scraped_at": "2026-05-07T14:53:15.486Z"
-        }
-      ]
-    },
-    {
-      "id": "google/gemma-4-26b",
-      "provider": "google",
-      "name": "Gemma 4 26B",
-      "aliases": [],
-      "context_window": null,
-      "max_output_tokens": null,
-      "pricing": {
-        "input_per_million_usd": 0.15,
-        "output_per_million_usd": 0.6,
-        "cache_read_per_million_usd": null,
-        "cache_write_per_million_usd": null
-      },
-      "modalities": {
-        "input": [
-          "text"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "capabilities": [
-        "fine_tunable"
-      ],
-      "knowledge_cutoff": null,
-      "released_at": null,
-      "deprecated": false,
-      "deprecation_date": null,
-      "benchmarks": [],
-      "last_updated": "2026-05-07",
-      "sources": [
-        {
-          "type": "pricing_page",
-          "url": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
-          "scraped_at": "2026-05-07T14:53:15.486Z"
-        },
-        {
-          "type": "model_card",
-          "url": "https://deepmind.google/technologies/gemini/",
-          "scraped_at": "2026-05-07T14:53:15.486Z"
+          "scraped_at": "2026-05-08T17:01:11.587Z"
         }
       ]
     },
@@ -1221,7 +1165,7 @@
       "provider": "openai",
       "name": "GPT-5.4",
       "aliases": [
-        "gpt-5.4-latest"
+        "gpt-5.4"
       ],
       "context_window": 1000000,
       "max_output_tokens": 128000,
@@ -1242,10 +1186,10 @@
       },
       "capabilities": [
         "extended_thinking",
-        "vision",
         "function_calling",
-        "web_search",
-        "fine_tunable"
+        "tool_use",
+        "vision",
+        "web_search"
       ],
       "knowledge_cutoff": "2025-08",
       "released_at": null,
@@ -1261,17 +1205,17 @@
           "as_of": "2026-05-07"
         }
       ],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "pricing_page",
           "url": "https://openai.com/api/pricing/",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         },
         {
           "type": "docs",
           "url": "https://platform.openai.com/docs/models",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         }
       ]
     },
@@ -1280,7 +1224,7 @@
       "provider": "openai",
       "name": "GPT-5.4 mini",
       "aliases": [
-        "gpt-5.4-mini-latest"
+        "gpt-5.4-mini"
       ],
       "context_window": 400000,
       "max_output_tokens": 128000,
@@ -1301,27 +1245,27 @@
       },
       "capabilities": [
         "extended_thinking",
-        "vision",
         "function_calling",
-        "web_search",
-        "fine_tunable"
+        "tool_use",
+        "vision",
+        "web_search"
       ],
       "knowledge_cutoff": "2025-08",
       "released_at": null,
       "deprecated": false,
       "deprecation_date": null,
       "benchmarks": [],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "pricing_page",
           "url": "https://openai.com/api/pricing/",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         },
         {
           "type": "docs",
           "url": "https://platform.openai.com/docs/models",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         }
       ]
     },
@@ -1330,7 +1274,7 @@
       "provider": "openai",
       "name": "GPT-5.5",
       "aliases": [
-        "gpt-5.5-latest"
+        "gpt-5.5"
       ],
       "context_window": 1000000,
       "max_output_tokens": 128000,
@@ -1351,10 +1295,10 @@
       },
       "capabilities": [
         "extended_thinking",
-        "vision",
         "function_calling",
-        "web_search",
-        "fine_tunable"
+        "tool_use",
+        "vision",
+        "web_search"
       ],
       "knowledge_cutoff": "2025-12",
       "released_at": null,
@@ -1363,32 +1307,34 @@
       "benchmarks": [
         {
           "name": "artificial-analysis-intelligence-index",
-          "score": 59,
+          "score": 60,
           "unit": "score",
           "source": "https://artificialanalysis.ai/models",
           "source_name": "Artificial Analysis",
-          "as_of": "2026-05-07"
+          "as_of": "2026-05-08"
         }
       ],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "pricing_page",
           "url": "https://openai.com/api/pricing/",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         },
         {
           "type": "docs",
           "url": "https://platform.openai.com/docs/models",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         }
       ]
     },
     {
       "id": "openai/gpt-image-2",
       "provider": "openai",
-      "name": "GPT Image 2",
-      "aliases": [],
+      "name": "GPT-Image-2",
+      "aliases": [
+        "gpt-image-2"
+      ],
       "context_window": null,
       "max_output_tokens": null,
       "pricing": {
@@ -1399,10 +1345,12 @@
       },
       "modalities": {
         "input": [
-          "image"
+          "image",
+          "text"
         ],
         "output": [
-          "image"
+          "image",
+          "text"
         ]
       },
       "capabilities": [
@@ -1414,61 +1362,17 @@
       "deprecated": false,
       "deprecation_date": null,
       "benchmarks": [],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "pricing_page",
           "url": "https://openai.com/api/pricing/",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         },
         {
           "type": "docs",
           "url": "https://platform.openai.com/docs/models",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
-        }
-      ]
-    },
-    {
-      "id": "openai/gpt-realtime-1.5",
-      "provider": "openai",
-      "name": "GPT Realtime 1.5",
-      "aliases": [],
-      "context_window": null,
-      "max_output_tokens": null,
-      "pricing": {
-        "input_per_million_usd": 32,
-        "output_per_million_usd": 64,
-        "cache_read_per_million_usd": 0.4,
-        "cache_write_per_million_usd": null
-      },
-      "modalities": {
-        "input": [
-          "audio"
-        ],
-        "output": [
-          "audio"
-        ]
-      },
-      "capabilities": [
-        "audio_input",
-        "audio_output"
-      ],
-      "knowledge_cutoff": null,
-      "released_at": null,
-      "deprecated": false,
-      "deprecation_date": null,
-      "benchmarks": [],
-      "last_updated": "2026-05-07",
-      "sources": [
-        {
-          "type": "pricing_page",
-          "url": "https://openai.com/api/pricing/",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
-        },
-        {
-          "type": "docs",
-          "url": "https://platform.openai.com/docs/models",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         }
       ]
     },
@@ -1501,12 +1405,12 @@
       "deprecated": true,
       "deprecation_date": "2026-05-15",
       "benchmarks": [],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "docs",
           "url": "https://docs.x.ai/developers/models",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         }
       ]
     },
@@ -1540,12 +1444,12 @@
       "deprecated": true,
       "deprecation_date": "2026-05-15",
       "benchmarks": [],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "docs",
           "url": "https://docs.x.ai/developers/models",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         }
       ]
     },
@@ -1578,12 +1482,12 @@
       "deprecated": false,
       "deprecation_date": null,
       "benchmarks": [],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "docs",
           "url": "https://docs.x.ai/developers/models",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         }
       ]
     },
@@ -1617,12 +1521,12 @@
       "deprecated": false,
       "deprecation_date": null,
       "benchmarks": [],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "docs",
           "url": "https://docs.x.ai/developers/models",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         }
       ]
     },
@@ -1656,12 +1560,12 @@
       "deprecated": false,
       "deprecation_date": null,
       "benchmarks": [],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "docs",
           "url": "https://docs.x.ai/developers/models",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         }
       ]
     },
@@ -1696,13 +1600,22 @@
       "released_at": null,
       "deprecated": false,
       "deprecation_date": null,
-      "benchmarks": [],
-      "last_updated": "2026-05-07",
+      "benchmarks": [
+        {
+          "name": "aider-polyglot",
+          "score": 79.6,
+          "unit": "%",
+          "source": "https://aider.chat/docs/leaderboards/",
+          "source_name": "Aider",
+          "as_of": "2026-05-08"
+        }
+      ],
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "docs",
           "url": "https://docs.x.ai/developers/models",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         }
       ]
     },
@@ -1737,12 +1650,12 @@
       "deprecated": false,
       "deprecation_date": null,
       "benchmarks": [],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "docs",
           "url": "https://docs.x.ai/developers/models",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         }
       ]
     },
@@ -1777,12 +1690,12 @@
       "deprecated": true,
       "deprecation_date": "2026-05-15",
       "benchmarks": [],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "docs",
           "url": "https://docs.x.ai/developers/models",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         }
       ]
     },
@@ -1817,12 +1730,12 @@
       "deprecated": false,
       "deprecation_date": null,
       "benchmarks": [],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "docs",
           "url": "https://docs.x.ai/developers/models",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         }
       ]
     },
@@ -1857,12 +1770,12 @@
       "deprecated": false,
       "deprecation_date": null,
       "benchmarks": [],
-      "last_updated": "2026-05-07",
+      "last_updated": "2026-05-08",
       "sources": [
         {
           "type": "docs",
           "url": "https://docs.x.ai/developers/models",
-          "scraped_at": "2026-05-07T14:57:12.467Z"
+          "scraped_at": "2026-05-08T16:50:28.264Z"
         }
       ]
     }

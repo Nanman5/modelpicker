@@ -104,19 +104,33 @@ describe("attachBenchmarks", () => {
     expect(warnings.some((w) => w.includes("Some Unknown Model"))).toBe(true);
   });
 
-  it("dedupes by (name + source_name) — newer score wins", () => {
-    const old = makeBenchmark({ score: 70, as_of: "2025-12-01" });
-    const models = [makeModel("anthropic", "claude-opus-4-5", { benchmarks: [old] })];
+  it("dedupes by (name + source_name) — higher score wins (so xhigh isn't overwritten by high)", () => {
+    const high = makeBenchmark({ score: 80, as_of: NOW_DATE });
+    const models = [makeModel("anthropic", "claude-opus-4-5", { benchmarks: [high] })];
     const records: BenchmarkRecord[] = [
       {
         model_label: "Claude Opus 4.5",
         provider_hint: "Anthropic",
-        benchmark: makeBenchmark({ score: 80, as_of: NOW_DATE }),
+        benchmark: makeBenchmark({ score: 70, as_of: NOW_DATE }),
       },
     ];
     const result = attachBenchmarks(models, records, () => {});
     expect(result.models[0]!.benchmarks).toHaveLength(1);
     expect(result.models[0]!.benchmarks[0]!.score).toBe(80);
+  });
+
+  it("dedupe upgrades to higher score when new record is better", () => {
+    const lower = makeBenchmark({ score: 59 });
+    const models = [makeModel("openai", "gpt-5.5", { benchmarks: [lower] })];
+    const records: BenchmarkRecord[] = [
+      {
+        model_label: "GPT-5.5 (xhigh)",
+        provider_hint: "OpenAI",
+        benchmark: makeBenchmark({ score: 60 }),
+      },
+    ];
+    const result = attachBenchmarks(models, records, () => {});
+    expect(result.models[0]!.benchmarks[0]!.score).toBe(60);
   });
 
   it("strips parenthetical reasoning-effort tags from model label before matching", () => {

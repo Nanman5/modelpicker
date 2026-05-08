@@ -79,6 +79,93 @@ describe("runScraper", () => {
     ]);
   });
 
+  it("drops third-party models listed on a marketplace page (e.g. Vertex AI lists Claude/Llama)", async () => {
+    const googleScraper = {
+      provider: {
+        id: "google",
+        name: "Google",
+        homepage: "https://ai.google.dev",
+        docs_url: null,
+        pricing_url: "https://cloud.google.com/vertex-ai/generative-ai/pricing",
+      },
+      pages: [{ type: "pricing_page" as const, url: "https://cloud.google.com/vertex-ai/generative-ai/pricing" }],
+    };
+
+    const llm = makeLLM({
+      models: [
+        {
+          id: "google/gemini-3.1-pro",
+          provider: "google",
+          name: "Gemini 3.1 Pro",
+          aliases: [],
+          context_window: 1_000_000,
+          max_output_tokens: 64000,
+          pricing: {
+            input_per_million_usd: 2,
+            output_per_million_usd: 12,
+            cache_read_per_million_usd: null,
+            cache_write_per_million_usd: null,
+          },
+          modalities: { input: ["text"], output: ["text"] },
+          capabilities: ["tool_use"],
+          knowledge_cutoff: null,
+          released_at: null,
+          deprecated: false,
+          deprecation_date: null,
+        },
+        {
+          // Vertex AI lists Claude — should be dropped, not re-labeled as google/...
+          id: "google/claude-opus-4-7",
+          provider: "google",
+          name: "Claude Opus 4.7",
+          aliases: [],
+          context_window: 1_000_000,
+          max_output_tokens: 64000,
+          pricing: {
+            input_per_million_usd: 5,
+            output_per_million_usd: 25,
+            cache_read_per_million_usd: null,
+            cache_write_per_million_usd: null,
+          },
+          modalities: { input: ["text"], output: ["text"] },
+          capabilities: ["tool_use"],
+          knowledge_cutoff: null,
+          released_at: null,
+          deprecated: false,
+          deprecation_date: null,
+        },
+        {
+          id: "google/llama-4-maverick",
+          provider: "google",
+          name: "Llama 4 Maverick",
+          aliases: [],
+          context_window: null,
+          max_output_tokens: null,
+          pricing: {
+            input_per_million_usd: 1,
+            output_per_million_usd: 2,
+            cache_read_per_million_usd: null,
+            cache_write_per_million_usd: null,
+          },
+          modalities: { input: ["text"], output: ["text"] },
+          capabilities: [],
+          knowledge_cutoff: null,
+          released_at: null,
+          deprecated: false,
+          deprecation_date: null,
+        },
+      ],
+    });
+
+    const snap = await runScraper(googleScraper, {
+      llm,
+      htmlByUrl: { "https://cloud.google.com/vertex-ai/generative-ai/pricing": "<html></html>" },
+      now: NOW,
+    });
+
+    expect(snap.models.map((m) => m.id)).toEqual(["google/gemini-3.1-pro"]);
+  });
+
   it("drops models that fail strict validation but keeps the rest", async () => {
     const llm = makeLLM({
       models: [

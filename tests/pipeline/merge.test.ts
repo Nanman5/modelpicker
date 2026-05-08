@@ -35,6 +35,7 @@ function makeModel(provider: string, slug: string): ModelFact {
     released_at: null,
     deprecated: false,
     deprecation_date: null,
+    benchmarks: [],
     last_updated: "2026-05-07",
     sources: [
       { type: "docs", url: `https://${provider}.example.com/docs`, scraped_at: NOW },
@@ -101,6 +102,38 @@ describe("mergeSnapshots", () => {
     const result = mergeSnapshots(previous, [snap("anthropic", [])], NOW);
     expect(result.dataset.models.map((m) => m.id)).toEqual(["anthropic/a"]);
     expect(result.warnings.some((w) => w.includes("0 models"))).toBe(true);
+  });
+
+  it("preserves benchmarks across provider re-scrapes (provider snapshots don't fill benchmarks)", () => {
+    const priorWithBench: ModelFact = {
+      ...makeModel("anthropic", "claude-opus-4-7"),
+      benchmarks: [
+        {
+          name: "mmlu-pro",
+          score: 84,
+          unit: "%",
+          source: "https://artificialanalysis.ai/models",
+          source_name: "Artificial Analysis",
+          as_of: "2026-05-07",
+        },
+      ],
+    };
+    const previous: Dataset = {
+      $schema: "https://modelpicker.dev/schema/v1.json",
+      version: 1,
+      generated_at: NOW,
+      providers: [makeProvider("anthropic")],
+      models: [priorWithBench],
+    };
+    // New snapshot has the same model id, but benchmarks: [] (provider scraper
+    // doesn't fill them). Merge should preserve the prior benchmarks.
+    const result = mergeSnapshots(
+      previous,
+      [snap("anthropic", ["claude-opus-4-7"])],
+      NOW,
+    );
+    expect(result.dataset.models[0]!.benchmarks).toHaveLength(1);
+    expect(result.dataset.models[0]!.benchmarks[0]!.name).toBe("mmlu-pro");
   });
 
   it("merges multiple providers and sorts deterministically", () => {

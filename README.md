@@ -121,7 +121,7 @@ Example `get_model` output:
 ## V1 coverage
 
 Providers: Anthropic, OpenAI, Google, xAI.
-Benchmark sources: Artificial Analysis.
+Benchmark sources: Artificial Analysis, Aider Polyglot leaderboard.
 
 More providers (Mistral, DeepSeek, Meta, Cohere) and more benchmark sources (LMArena, Vellum) are straightforward to add — see `Contributing` below.
 
@@ -132,6 +132,19 @@ More providers (Mistral, DeepSeek, Meta, Cohere) and more benchmark sources (LMA
 - A separate stage runs benchmark scrapers (`src/scrapers/benchmarks/`) and attaches scores to models by id / alias / name, never silently misattributing.
 - The pipeline writes `data/models.json` and commits it. The full history lives in `git log -p data/models.json`.
 - The published npm package bundles the latest committed dataset, so MCP clients work offline.
+
+## Sanitization & integrity
+
+The page → LLM → dataset pipeline has several guards against bad data:
+
+- **HTML cleanup** — `<script>`, `<style>`, navigation chrome, hydration placeholders, inline `style=` and `on*=` attributes are stripped before text extraction. Bare URLs and zero-width / bidi characters are removed (URLs are noise; the real source URLs are tracked separately in each model's `sources` array).
+- **Prompt-injection guard** — page content is wrapped in `<page url="..." type="...">…</page>` and the system prompt explicitly instructs the LLM to treat anything inside those tags as data, never instructions. Literal `</page>` substrings in the page are escaped so a hostile page can't close the tag early.
+- **Anti-hallucination** — the system prompt forbids prior-knowledge fill-ins ("`claude-1`", "`gpt-3.5`"). The LLM must emit only models whose names appear verbatim in the page text.
+- **Cross-provider guard** — marketplace pages (Vertex AI, Bedrock, Azure) list third-party models hosted on the platform. A name-pattern check drops models whose slug clearly belongs to another provider (e.g. a `claude-*` model returned by the Google scraper is rejected and logged).
+- **Per-row Zod validation** — every extracted row is validated against the strict `ModelFact` schema. Invalid rows are dropped with a warning; the rest of the batch survives.
+- **Pipeline tolerance** — if a single page fetch, single scraper, or single benchmark source fails, the rest still run and the dataset retains prior data for the failing piece.
+
+Together these mean a malicious or misformatted page can't poison the dataset: the worst case is "no fresh data for that provider this run, prior data kept", not "wrong data committed".
 
 ## Local development
 
