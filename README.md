@@ -20,20 +20,44 @@ When you ask an agent to pick a model:
 
 Add it to your MCP-compatible client. The dataset is bundled with the package, so it works offline.
 
-**Claude Desktop / Cursor / Cline / Claude Code (`.mcp.json`):**
+### For AI agents: self-install prompt
+
+Paste this into any agent that can edit files and run shell commands (Claude Code, Cursor, Codex, etc.):
+
+> Install the MCP server at `https://github.com/Nanman5/modelpicker`. Add an entry under `mcpServers.modelpicker` in my MCP config (Claude Code: `claude mcp add modelpicker -- npx -y github:Nanman5/modelpicker`; Claude Desktop: `~/Library/Application Support/Claude/claude_desktop_config.json`; Cursor: `.cursor/mcp.json` or `~/.cursor/mcp.json`; Codex: `~/.codex/mcp_servers.json`). Use `command: "npx"` and `args: ["-y", "github:Nanman5/modelpicker"]`. After installing, restart the client and call the `list_providers` tool to verify it connected.
+
+### Manual install — Claude Code
+
+```bash
+claude mcp add modelpicker -- npx -y github:Nanman5/modelpicker
+```
+
+### Manual install — config file (Claude Desktop / Cursor / Cline / generic `.mcp.json`)
 
 ```jsonc
 {
   "mcpServers": {
     "modelpicker": {
       "command": "npx",
-      "args": ["-y", "modelpicker-mcp"]
+      "args": ["-y", "github:Nanman5/modelpicker"]
     }
   }
 }
 ```
 
-To pin to a specific dataset version: `npx -y modelpicker-mcp@0.1.0`. Run `npm update -g modelpicker-mcp` to pull the latest dataset.
+The first launch clones the repo and builds via the `prepare` script (~10 seconds). Subsequent launches are instant.
+
+### Smoke test (no MCP client needed)
+
+```bash
+echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"smoke","version":"0"}}}
+{"jsonrpc":"2.0","method":"notifications/initialized","params":{}}
+{"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}' | npx -y github:Nanman5/modelpicker
+```
+
+Should print one JSON-RPC response per request. If you see the six tools listed in the second response, you're good.
+
+When `modelpicker-mcp` is published to npm, replace `github:Nanman5/modelpicker` with `modelpicker-mcp`.
 
 ## What the agent gets
 
