@@ -1,7 +1,7 @@
 {
   "$schema": "https://modelpicker.dev/schema/v1.json",
   "version": 1,
-  "generated_at": "2026-05-08T17:01:11.587Z",
+  "generated_at": "2026-05-09T08:13:14.243Z",
   "providers": [
     {
       "id": "anthropic",
